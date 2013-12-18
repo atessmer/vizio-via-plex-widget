@@ -1,0 +1,17 @@
+"app_name"="Plex";
+"menu_main"="Main Menu";
+"menu_medialibrary"="Media Library";
+"menu_preferences"="Preferences";
+"label_pms"="Plex Media Server";
+"label_host"="Hostname or IP without http:// or :32400";
+"video_dialog_play_video"="Play Video";
+"video_dialog_resume_from"="Resume from";
+"video_dialog_play_from_beginning"="Play from beginning";
+
+
+"video_error_dialog_title"="Video Playback Error";
+"video_error_dialog_message"="We encountered an error attempting to playback the requested video. Please try again and if the problem persists try again at a later date.";
+"dialog_ok_button"="Ok";
+"dialog_retry_button"="Retry Again";
+"dialog_cancel_button"="Cancel";
+"now_playing"="Return to Video";

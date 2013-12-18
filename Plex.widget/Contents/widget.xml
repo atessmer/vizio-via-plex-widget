@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <name>Plex</name>
+    <version>0.0.22</version>
+    <identifier>com.atessmer.widgets.tv.plexapp</identifier>
+    <author name="Alex Tessmer" organization="" href="http://github.com/atessmer" />
+    <copyright>2013 Alex Tessmer</copyright>
+    <description>Plex App</description>
+    <platform minVersion="5.0" />
+    <security>
+        <filesystem>full</filesystem>
+        <command>true</command>
+        <http>all</http>
+    </security>
+    <image usage="960x540.logo" src="Images/960x540/logo.png"/>
+    <image usage="960x540.icon" src="Images/960x540/icon.png"/>
+    <image usage="960x540.placeholder.snipped" src="Images/960x540/placeholder.png"/>
+</metadata>
