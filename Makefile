@@ -3,6 +3,7 @@
 #
 # Makefile Usage:
 # > make
+# > make clean
 #
 # Important Notes: 
 # The output of the build process is a zip file with a .widget extension.
@@ -12,14 +13,21 @@
 # For more details, see:
 # http://developer.yahoo.com/connectedtv/installguide/CTV_IG_Testing_on_a_Consumer_Device.html
 ##########################################################################  
-WIDGET_CFG = 'Plex.widget/Contents/widget.xml'
-APPNAME = $(shell xpath -q -e 'metadata/name/text()' $(WIDGET_CFG))
-APPVERSION = $(shell xpath -q -e 'metadata/version/text()' $(WIDGET_CFG))
-APPID = $(shell xpath -q -e 'metadata/identifier/text()' $(WIDGET_CFG))
-ZIP_EXCLUDE = -x */.*
+FILES := $(shell find Plex.widget -type f -not -path '*/.*')
+CFG = Plex.widget/Contents/widget.xml
 
-package:
-	@echo "  >> creating application $(APPID)-$(APPVERSION).widget"
-	zip $(ZIP_EXCLUDE) -r $(APPID)-$(APPVERSION).widget Plex.widget
+APPNAME := $(shell xpath -q -e 'metadata/name/text()' $(CFG))
+APPVERSION := $(shell xpath -q -e 'metadata/version/text()' $(CFG))
+APPID := $(shell xpath -q -e 'metadata/identifier/text()' $(CFG))
 
-all: package
+WIDGET := $(APPID)-$(APPVERSION).widget
+
+
+$(WIDGET): $(FILES)
+	@echo "  >> creating application $(WIDGET)"
+	zip $(WIDGET) $(FILES)
+
+all: $(WIDGET)
+
+clean:
+	rm $(shell find . -maxdepth 1 -type f -name '*.widget')
